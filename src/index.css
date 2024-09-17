@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .paused {
+    animation-play-state :paused;
+  }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    background: #040404;
+    border-color: #3b3b3b;
+    user-select: none;
+  }
+
+  .bgC {
+    background: linear-gradient(0deg, rgba(211,217,226,1) 28%, rgba(230,202,209,1) 92%);
+  }
+
+  .selection-container {
+    border: 2px solid transparent; 
+    transition: border-color 0.3s ease; 
+  }
+
+  .selection-container:hover {
+      border-color: var(--primary-color);
+  }
+
+  .jacket-card-container {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .jacket-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+  }
+  
+  .jacket-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .jacket-card-container:hover .info-overlay {
+    opacity: 1;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .info {
+    margin-top: 0.5rem;
+  }
+  
+  .hero {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0c0c1d, #111132);
+  
+    .wrapper {
+      max-width: 1366px;
+      height: 100%;
+      margin: auto;
+  
+      .textContainer {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      
+  
+        @include mobile {
+          height: 50%;
+          width: 100%;
+          gap: 20px;
+          align-items: center;
+          text-align: center;
+        }
+  
+        .headline {
+          font-size: 88px;
+          color: white;
+          
+  
+          @include mobile {
+            font-size: 36px;
+          }
+        }
+  
+        .buttons {
+          button {
+            padding: 15px;
+            border: 1px solid #32333b;
+            border-radius: 10px;
+            background-color: transparent;
+            color: white;
+            margin-top: 20px;
+            margin-right: 20px;
+            cursor: pointer;
+            font-weight: 300;
+          }
+        }
+  
+        img {
+          width: 50px;
+        }
+      }
+    }
+  
+    .imageContainer {
+      height: 100%;
+      left: 0;
+  
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        top: unset;
+        bottom: 0;
+      }
+  
+      img{
+        width: 100vw;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .slidingTextContainer {
+      position: absolute;
+      font-size: 50vh;
+      bottom: -120px;
+      white-space: nowrap;
+      color: #ffffff09;
+      width: 50%;
+      font-weight: bold;
+    }
+  }
+ 
+  .top-btn-position {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+  }
+  
+  .top-btn-style {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .top-btn-style:hover {
+    animation: none;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  .right-btn {
+    height: 40px;
+    width: 40px;
+    color: #000000;
+    cursor: pointer;
+  }
+
